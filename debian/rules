@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+DH_VERBOSE = 1
+
+export DH_OPTIONS=-v
+export DH_GOPKG := github.com/csyezheng/a2fa
+export CGO_ENABLED := 0
+export GOCACHE := /tmp/gocache
+export GOPROXY := https://proxy.golang.org
+export GO111MODULE := on
+export PATH := /usr/local/go/bin:$(PATH)
+
+BUILD_DIR := $(CURDIR)/_build
+
+%:
+	dh $@ # --buildsystem=golang --with=golang --builddirectory=$(BUILD_DIR)
+

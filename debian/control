@@ -1,0 +1,25 @@
+Source: a2fa
+Section: utils
+Priority: optional
+Maintainer: Ye Zheng <csyezheng@gmail.com>
+Rules-Requires-Root: no
+Build-Depends:
+        debhelper (>= 13.6),
+        dh-golang (>= 1.53),
+        golang-go,
+	golang-github-mitchellh-go-homedir-dev,
+	golang-github-spf13-cobra-dev
+Standards-Version: 4.6.2
+Homepage: https://github.com/csyezheng/a2fa
+Vcs-Browser: https://github.com/csyezheng/a2fa
+Vcs-Git: https://github.com/csyezheng/a2fa.git
+
+Package: a2fa
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Description: a2fa is a command line tool for generating and validating one-time password.
+ a2fa means annoying two-factor authentication. 
+ Its purpose is to get rid of phones and be able to authenticate easily. 
+ It keeps synced with Google Authenticator, Microsoft Authenticator.
